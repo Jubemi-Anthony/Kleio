@@ -17,14 +17,14 @@ const FirstTime = () => {
         </div>
         {
             num < 3 ?
-            <button onClick={()=> setNum(num + 1)} className='bg-dark w-3/4 mx-auto text-3xl py-2 px-3 rounded-2xl flex items-center justify-center gap-1 text-white'>
+            <button onClick={()=> setNum(num + 1)} className='bg-bright w-3/4 mx-auto text-3xl py-3 px-3 rounded-2xl flex items-center justify-center gap-1 text-army font-bold'>
             Get Started
-            <FontAwesomeIcon className='text-white' icon={faRightLong}/>
+            <FontAwesomeIcon className='text-army' icon={faRightLong}/>
         </button> :
         <Link href='/register'>
-            <p className='bg-dark w-3/4 mx-auto text-3xl py-2 px-3 rounded-2xl flex items-center justify-center gap-1 text-white'>
+            <p className='bg-bright w-3/4 mx-auto text-3xl py-3 px-3 rounded-2xl flex items-center justify-center gap-1 text-army font-bold'>
                 Get Started
-                <FontAwesomeIcon className='text-white' icon={faAngleDoubleRight}/>
+                <FontAwesomeIcon className='text-army' icon={faAngleDoubleRight}/>
             </p>
         </Link>
         }

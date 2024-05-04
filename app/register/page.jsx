@@ -23,7 +23,7 @@ const Register = () => {
                     </button>
                 </div>
                 <p className="text-center font-semibold text-xl my-5">or</p>
-                <Link href='/'>
+                <Link href='/create'>
                     <p className="bg-army text-white text-center py-3 text-xl font-semibold rounded-xl">Create an Account</p>
                 </Link>
             </section>

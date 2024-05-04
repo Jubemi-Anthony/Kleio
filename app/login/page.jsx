@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <main className="h-screen pt-[2vh] bg-bright">
         <Link href='/register'>
-            <FontAwesomeIcon className="ml-6 text-2xl" icon={faLeftLong}/>
+            <FontAwesomeIcon className="ml-6 text-army text-2xl" icon={faLeftLong}/>
         </Link>
         <hr className="bg-army h-[2px] w-4/5 mx-auto border-none mt-[2vh]"/>
         <div className="w-11/12 mx-auto">
