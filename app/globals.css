@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .selectedPara {
+      @apply bg-dull p-2 rounded-lg;
+    }
+  }

@@ -17,7 +17,8 @@ module.exports = {
         dark: '#010203',
         bright: '#F1F1F1',
         grey: '#1D1E1F',
-        ash: '#0E0E0E'
+        ash: '#0E0E0E',
+        dull: '#FFFFFF60'
       }
     },
   },
