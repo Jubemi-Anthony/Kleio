@@ -11,7 +11,7 @@ const Nav = () => {
                 Home
             </div>
         </Link>
-        <Link href='/'>
+        <Link href='/search'>
             <div className="flex text-base font-bold flex-col items-center">
                 <FontAwesomeIcon className="text-lg" icon={faSearch}/>
                 Search
@@ -22,7 +22,7 @@ const Nav = () => {
                 <FontAwesomeIcon className="text-2xl bg-army text-white p-3 rounded-full" icon={faPlus}/>
             </div>
         </Link>
-        <Link href='/'>
+        <Link href='/topics'>
             <div className="flex text-base font-bold flex-col items-center">
                 <FontAwesomeIcon className="text-lg" icon={faFire}/>
                 Topics

@@ -1,5 +1,6 @@
 import { faBell } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Link from "next/link"
 
 const Header = () => {
   return (
@@ -10,7 +11,9 @@ const Header = () => {
         <div className="w-16">
             <img className="w-full" src="/kleio2.png" alt="logo" />
         </div>
-        <FontAwesomeIcon className="w-16 text-4xl" icon={faBell}/>
+        <Link href='/notification'>
+          <FontAwesomeIcon className="w-16 text-4xl" icon={faBell}/>
+        </Link>
     </header>
   )
 }
