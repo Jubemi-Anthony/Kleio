@@ -5,7 +5,7 @@ import { useState } from "react";
 const CreatePost = ({setCreate}) => {
     const [cats, setCats] = useState(['technology']);
   return (
-    <section className="fixed top-[10%] bg-white shadow-2xl left-[5%] w-[90%] h-[70vh]">
+    <section className="fixed top-[5%] bg-white shadow-2xl left-[5%] w-[90%] h-[80vh]">
         <div className="relative p-3">
             <FontAwesomeIcon onClick={()=> setCreate(false)} className="absolute top-3 text-2xl text-red-600 right-3" icon={faX}/>
             <div className='flex items-center gap-2 pb-1'>
@@ -50,7 +50,7 @@ const CreatePost = ({setCreate}) => {
                     </select>
                 </div>
                 <div className="mt-3 flex items-center gap-1">
-                    <input id="file" type="file" />
+                    <input id="file"jpjikveiwokkakvkq type="file" />
                     <label htmlFor="file"><FontAwesomeIcon className="text-2xl text-army" icon={faCamera}/></label>
                 </div>
                 <button className="bg-army mt-5 text-xl font-semibold text-white p-2">Post</button>
