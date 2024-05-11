@@ -1,11 +1,14 @@
-"use client";
+'use client'
+import { useState } from "react";
 import { faMessage, faPerson, faLeftLong, faLock, faBook } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 import EditProfile from "../[components]/FirstTime/Profile/EditProfile"
 import Post from "../[components]/FirstTime/Main/Post"
 import EditModal from "../[components]/FirstTime/Profile/EditModal"
-import { useState } from "react";
+import { signOut } from "next-auth/react";
+import { redirect } from "next/navigation";
+
 
 const page = () => {
     const [edit, setEdit] = useState(false);
@@ -14,6 +17,12 @@ const page = () => {
     const editMe = (item) =>{
         setEditItem(item);
         setEdit(true);
+    }
+
+    const signOuttaHere = ()=>{
+        // signOut()
+        window.location.href = '/login';
+        // redirect('/login');
     }
   return (
     <main className="pt-[2vh] min-h-screen pb-11 bg-bright">
@@ -38,6 +47,7 @@ const page = () => {
                     <EditProfile editMe={editMe} icon={faPerson} item={'User Name'}/>
                     <EditProfile editMe={editMe} icon={faLock} item={'Password'}/>
                 </section>
+                <button onClick={()=> signOuttaHere()} className="bg-dark text-army text-2xl uppercase p-3 rounded-lg font-bold w-full">Sign Out</button>
             </div>
             <hr className="bg-army h-[2px] w-4/5 mx-auto border-none mt-[2vh]"/>
             <section className="mt-5">

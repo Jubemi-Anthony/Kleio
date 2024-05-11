@@ -1,3 +1,5 @@
+"use client";
+import { signIn } from "next-auth/react";
 import Link from "next/link"
 
 const Register = () => {
@@ -13,7 +15,7 @@ const Register = () => {
             </div>
             <section>
                 <div className="flex flex-col gap-4 mt-5">
-                    <button className="text-dark bg-white py-3 rounded-xl flex justify-center items-center gap-2 text-xl">
+                    <button onClick={()=> signIn("google")} className="text-dark bg-white py-3 rounded-xl flex justify-center items-center gap-2 text-xl">
                         <img className="w-7" src="https://cdn3.iconfinder.com/data/icons/logos-brands-3/24/logo_brand_brands_logos_google-64.png" alt="google" />
                         Sign up with Google
                     </button>
