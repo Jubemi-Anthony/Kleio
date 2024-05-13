@@ -10,7 +10,7 @@ const EditProfile = ({item, icon,editMe}) => {
             <FontAwesomeIcon className="text-grey" icon={faPen}/>
         </p>
     </div>
-  )
+  ) 
 }
 
 export default EditProfile

@@ -1,5 +1,5 @@
 import { connectMongoDB } from "@/lib/mongodb";
-import User from "@/models/User";
+import DataUsers from "@/models/DataUsers";
 import { NextResponse } from "next/server";
 
 //USER NOT FOUND: 0
@@ -10,7 +10,7 @@ export async function POST(req){
     const {email, password} = await req.json();
     await connectMongoDB();
     try {
-        const selected = await User.findOne({email: email})
+        const selected = await DataUsers.findOne({email: email})
         if(!selected){
             console.log('USER NOT FOUND');
             return NextResponse.json({message: "0", message1: 'USER NOT FOUND'}, {status: 400});

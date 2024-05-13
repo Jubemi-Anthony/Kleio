@@ -22,7 +22,7 @@ const page = () => {
             setUser(isLoggedIn);
         }
       }
-    }, [])
+    }, [edit])
     
 
     const editMe = (item) =>{
@@ -49,7 +49,7 @@ const page = () => {
                 <img className="w-[25%] rounded-full mt-4" src={user.img} alt={user.name} />
                 <div className='flex text-center flex-col items-center w-full'>
                     <p className='text-dark font-bold text-xl'>{user.name}</p>
-                    <p className='text-grey font-semibold'>{user.email}</p>
+                    <p className='text-grey font-semibold'>{user?.userName || user.email}</p>
                 </div>
                 {
                     user.bio && 

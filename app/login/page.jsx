@@ -51,14 +51,7 @@ const Login = () => {
                 }
                 }else{
                     localStorage.removeItem("userInfo");
-                    const {_id, name, email, img, createdAt} = data.user;
-                    localStorage.setItem("userInfo", JSON.stringify({
-                        name,
-                        email,
-                        img,
-                        createdAt,
-                        id: _id
-                    }))
+                    localStorage.setItem("userInfo", JSON.stringify(data.user))
                     window.location.href = `home/${_id}`
                 }
             }

@@ -5,7 +5,7 @@ export default function Home() {
   let isLoggedIn = localStorage.getItem("userInfo");
   if(isLoggedIn){
     isLoggedIn = JSON.parse(isLoggedIn)
-    window.location.href = `/home/${isLoggedIn.id}`;
+    window.location.href = `/home/${isLoggedIn._id}`;
   }  
   if(!isLoggedIn){
     return (

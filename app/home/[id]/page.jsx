@@ -21,15 +21,7 @@ const Home = ({params}) => {
             })
             if (res.ok){
               const data = await res.json();
-              console.log(data.user);
-              const {_id, name, email, img, createdAt} = data.user;
-              localStorage.setItem("userInfo", JSON.stringify({
-                name,
-                email,
-                img,
-                createdAt,
-                id: _id
-              }))
+              localStorage.setItem("userInfo", JSON.stringify(data.user))
               isLoggedIn = localStorage.getItem("userInfo");
               isLoggedIn = JSON.parse(isLoggedIn)
               setLoggedUser(isLoggedIn);

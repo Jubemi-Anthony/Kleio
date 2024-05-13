@@ -3,6 +3,7 @@ import { faX } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import InputProfileEdit from "./InputProfileEdit"
 import { useState } from "react";
+import { CURRENTURL } from "@/app/CONSTANTS";
 
 const EditModal = ({setEdit, editItem, user}) => {
   const [itemChange, setItemChange] = useState({
@@ -12,9 +13,36 @@ const EditModal = ({setEdit, editItem, user}) => {
     userName: user?.userName || '',
     password: ''
   })
-  const handleSubmit = (e)=>{
+  const handleSubmit = async (e)=>{
     e.preventDefault;
-    console.log(itemChange);
+    if(editItem === 'Email') return;
+
+    const res = await fetch(`http://${CURRENTURL}/api/updateUser`, {
+        method: 'POST',
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            editItem,
+            name: itemChange.name,
+            bio: itemChange.bio,
+            email: itemChange.email,
+            userName: itemChange.userName,
+            password: itemChange.password
+        })
+      })
+          const data = await res.json();
+          alert(data.message);
+          if(res.ok){
+              localStorage.setItem("userInfo", JSON.stringify(data.user))
+              setItemChange({
+                name: data.user?.name,
+                bio: data.user?.bio || '',
+                email: data.user?.email,
+                userName: data.user?.userName || '',
+                password: ''
+              })
+          }
   }
   return (
     <section className="fixed top-[5%] bg-white shadow-2xl left-[5%] w-[90%] h-[70vh]">
