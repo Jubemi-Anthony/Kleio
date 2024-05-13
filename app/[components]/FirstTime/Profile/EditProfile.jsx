@@ -1,4 +1,4 @@
-import { faLock, faMessage, faPen, faPerson } from "@fortawesome/free-solid-svg-icons"
+import {faPen} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const EditProfile = ({item, icon,editMe}) => {

@@ -1,11 +1,17 @@
+'use client';
 import FirstTime from "./[components]/FirstTime/FirstTime";
-import Main from "./[components]/FirstTime/Main/Main";
 
 export default function Home() {
-  return (
-    <div>
-      {/* <FirstTime/> */}
-      <Main/>
-    </div>
-  );
+  let isLoggedIn = localStorage.getItem("userInfo");
+  if(isLoggedIn){
+    isLoggedIn = JSON.parse(isLoggedIn)
+    window.location.href = `/home/${isLoggedIn.id}`;
+  }  
+  if(!isLoggedIn){
+    return (
+      <div>
+        <FirstTime/>
+      </div>
+    );
+  }
 }

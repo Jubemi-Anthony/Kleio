@@ -3,6 +3,18 @@ import { signIn } from "next-auth/react";
 import Link from "next/link"
 
 const Register = () => {
+    
+    const signInner = () =>{
+        let isLoggedIn = localStorage.getItem("userInfo");
+        if(isLoggedIn){
+            isLoggedIn = JSON.parse(isLoggedIn)
+            const id = isLoggedIn.id;
+            window.location.href = `/home/${id}`;
+        }else{
+            signIn("google")
+        }
+    }
+
   return (
     <main className="h-screen bg-bright">
         <div className="pt-[2vh] w-11/12 mx-auto">
@@ -15,7 +27,7 @@ const Register = () => {
             </div>
             <section>
                 <div className="flex flex-col gap-4 mt-5">
-                    <button onClick={()=> signIn("google")} className="text-dark bg-white py-3 rounded-xl flex justify-center items-center gap-2 text-xl">
+                    <button onClick={()=> signInner()} className="text-dark bg-white py-3 rounded-xl flex justify-center items-center gap-2 text-xl">
                         <img className="w-7" src="https://cdn3.iconfinder.com/data/icons/logos-brands-3/24/logo_brand_brands_logos_google-64.png" alt="google" />
                         Sign up with Google
                     </button>

@@ -1,3 +1,4 @@
+import { CURRENTURL } from "@/app/CONSTANTS";
 import NextAuth from "next-auth/next";
 import GoogleProvider from 'next-auth/providers/google';
 
@@ -10,12 +11,10 @@ const authOptions = {
     ],
     callbacks: {
         async signIn({user, account}){
-            console.log(`User: ${user}, Account: ${account}`);
-
             if(account.provider === 'google'){
                 const {name, email, image} = user;
                 try {
-                    const res = await fetch('http://localhost:3000/api/user', {
+                    const res = await fetch(`http://${CURRENTURL}/api/createUser`, {
                         method: 'POST',
                         headers: {
                             "Content-Type" : "application/json"
@@ -23,11 +22,14 @@ const authOptions = {
                         body: JSON.stringify({
                             name,
                             email,
-                            img: image
+                            img: image,
+                            auth: true
                         })
                     })
                     if (res.ok){
-                        return user;
+                        const data = await res.json();
+                        console.log(data.user);
+                        return `/home/${data.user}`;
                     }
                 } catch (error) {
                     console.log(error);

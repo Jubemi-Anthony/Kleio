@@ -4,8 +4,8 @@ import { NextResponse } from "next/server";
 
 
 export async function POST(req){
-    const {name, email, img} = await req.json();
+    const {id} = await req.json();
     await connectMongoDB();
-    await User.create({name, email, img});
-    return NextResponse.json({message: "User Created"}, {status: 201});
+    const selected = await User.findOne({_id: id})
+    return NextResponse.json({message: "User Found", user: selected}, {status: 201});
 }

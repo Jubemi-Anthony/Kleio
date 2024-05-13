@@ -18,6 +18,13 @@ const userSchema = new Schema(
         },
         userName:{
             type: String
+        },
+        bio:{
+            type: String
+        },
+        auth:{
+            type: Boolean,
+            required: true
         }
     }, {timestamps: true}
 );

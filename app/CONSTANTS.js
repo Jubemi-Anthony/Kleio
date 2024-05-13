@@ -1,0 +1,1 @@
+export const CURRENTURL = 'localhost:3000'
